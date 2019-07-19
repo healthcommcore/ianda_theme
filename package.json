@@ -1,0 +1,11 @@
+{
+  "name": "ianda_theme",
+  "version": "1.0",
+  "description": "Sass architecture for I and A theme development",
+  "main": "index.js",
+  "author": "Dave Rothfarb",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
