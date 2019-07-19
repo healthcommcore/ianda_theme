@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,I,CACE,qB,CAEF,Y,CACE,c,CACA,mB","file":"styles.css","sourcesContent":["body {\n  background-color: #ffff00; }\n\n.index-col-3 {\n  column-count: 3;\n  -moz-column-count: 3; }\n"]}
