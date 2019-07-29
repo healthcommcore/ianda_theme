@@ -4,6 +4,18 @@ body {
   background-color: $bg-color;
 }
 
+header {
+  .banner {
+    padding: 1.1rem 0;
+    background: url("../images/header_bottom_bkgrd.svg") 0 100% repeat-x;
+    .navbar-brand {
+      padding: 0;
+    }
+  }
+}
+
+
+
 .index-col-3 {
   column-count: 3;
   -moz-column-count: 3;

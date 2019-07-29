@@ -19,7 +19,11 @@
   ]
 %}
 {% if content %}
-    <section{{ attributes.addClass(classes).removeClass('row') }}>
-      {{ content }}
+    <section{{ attributes.addClass(classes) }}>
+      <div class="col align-self-end">
+        <div class="row">
+          {{ content }}
+        </div>
+      </div>
     </section>
 {% endif %}
