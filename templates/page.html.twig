@@ -73,8 +73,10 @@
         {% if page.top_left_header or page.top_right_header or page.top_header_form %}
           <div class="banner">
             <div class="container clearfix">
-            {{ page.top_left_header }}
-            {{ page.top_right_header }}
+              <div class="row">
+                {{ page.top_left_header }}
+                {{ page.top_right_header }}
+              </div>
             </div>
             {% if page.top_header_form %}
               <div class="form-inline navbar-form float-right">
@@ -102,11 +104,13 @@
             {% endif %}
           </div>
         </nav>
-                {% if page.homepage_tiles %}
-                <div class="container">
-                  {{ page.homepage_tiles }}
-                </div>
-                {% endif %}
+        {% if page.homepage_tiles %}
+          <div class="homepage-tiles">
+            <div class="container">
+              {{ page.homepage_tiles }}
+            </div>
+          </div>
+        {% endif %}
 {% endblock %}
 
 
