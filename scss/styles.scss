@@ -1,9 +1,21 @@
 $dk-blue: #13496D;
 $pale-yellow: #F4CE90;
+$turq: #00BDFF;
+
+$frank: "frank-new";
+$rift: "rift";
+$fsp: "freight-sans-pro";
+
+$book: 400;
+$med: 500;
+$semi: 600;
+$bold: 700;
 
 body {
   background-color: $dk-blue;
   font-size: 1.1rem;
+  font-family: $fsp;
+  font-weight: $book;
 }
 
 header, .layout-main-wrapper {
@@ -23,6 +35,28 @@ header {
 .homepage-tiles {
   background-image: url("../images/hero_bkgrd.jpg");
   background-size: cover;
+  .block-views {
+    font-family: $frank;
+    background-color: #fff;
+    a {
+      font-weight: $book;
+      text-decoration: underline;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: $book;
+      a {
+        display: block;
+        color: #fff;
+        background-color: $dk-blue;
+        padding: .8rem 1.2rem;
+        border-bottom: $turq 9px solid;
+      }
+      a, a:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .mission-statement {
@@ -31,6 +65,8 @@ header {
     width: 80%;
     h1 {
       color: $pale-yellow;
+      font-family: $rift;
+      font-weight: $semi;
     }
   }
 }
@@ -49,6 +85,8 @@ header {
 .menu--main {
   .nav-link {
     color: $dk-blue;
+    font-family: $frank;
+    font-weight: $med;
   }
   .nav-link:hover,
   .nav-link:focus,
