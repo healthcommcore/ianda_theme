@@ -39,6 +39,7 @@
 %}
 {% if configuration.homepage_tile %}
   <div class="col-md-4">
+    <div class="homepage-tile">
 {% endif %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
@@ -53,5 +54,6 @@
   {% endblock %}
 </div>
 {% if configuration.homepage_tile %}
+    </div>
   </div>
 {% endif %}
