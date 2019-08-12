@@ -2,6 +2,7 @@ global-styling:
   version: VERSION
   js:
     js/global.js: {}
+    js/homepage_tiles.js: {}
   css:
     component:
       css/styles.css: {}
