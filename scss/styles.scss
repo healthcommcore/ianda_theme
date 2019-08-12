@@ -1,5 +1,6 @@
 $dk-blue: #13496D;
 $pale-yellow: #F4CE90;
+$bright_yellow: #E5CF6A;
 $turq: #00BDFF;
 
 $frank: "frank-new";
@@ -13,9 +14,10 @@ $bold: 700;
 
 body {
   background-color: $dk-blue;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: $fsp;
   font-weight: $book;
+  line-height: 1.6rem;
 }
 
 header, .layout-main-wrapper {
@@ -25,10 +27,32 @@ header, .layout-main-wrapper {
 header {
   .banner {
     padding: 1.1rem 0;
-    background: url("../images/header_bottom_bkgrd.svg") 0 100% repeat-x;
+    background: url("../images/yellow_vert_lines.svg") 0 100% repeat-x;
     .navbar-brand {
       padding: 0;
     }
+  }
+}
+
+.navbar {
+  padding-top: 0.3rem;
+  padding-bottom: 0;
+}
+
+.menu--main {
+  .nav-link {
+    color: $dk-blue;
+    font-family: $frank;
+    font-weight: $book;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-bottom: #fff 7px solid;
+    margin: 0 1.05rem;
+  }
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link.is-active {
+    border-color: $bright-yellow;
   }
 }
 
@@ -45,7 +69,7 @@ header {
       color: $pale-yellow;
       font-family: $rift;
       font-weight: $semi;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       margin: 0;
       line-height: 2.4rem;
     }
@@ -64,7 +88,7 @@ header {
     background-color: #fff;
     h2 {
       margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: $book;
       a {
         display: block;
@@ -90,6 +114,7 @@ header {
         }
       }
       a {
+        font-size: 1.1rem;
         color: #000;
         font-weight: $med;
         text-decoration: underline;
@@ -101,6 +126,26 @@ header {
   }
 }
 
+.homepage-news-grid {
+  margin-top: 2.5rem;
+}
+
+.title-decor {
+  background: #fff url('../images/yellow_vert_lines.svg') 2% 100% no-repeat;
+  padding-bottom: 0.1rem;
+  margin-bottom: 1.0rem;
+  margin-left: -2.0rem;
+}
+
+h1 {
+  font-weight: $book;
+  color: $dk-blue;
+  border-bottom: $dk-blue 1px solid;
+  padding-left: 2.8rem;
+  font-size: 2.8rem;
+  line-height: 3.4rem;
+}
+
 .index-col-3 {
   column-count: 3;
   -moz-column-count: 3;
@@ -108,19 +153,6 @@ header {
 
 .view-fast-find {
   .views-row {
-  }
-}
-
-.menu--main {
-  .nav-link {
-    color: $dk-blue;
-    font-family: $frank;
-    font-weight: $med;
-  }
-  .nav-link:hover,
-  .nav-link:focus,
-  .nav-link.active.is-active {
-    text-decoration: underline;
   }
 }
 
