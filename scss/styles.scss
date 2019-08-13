@@ -156,6 +156,58 @@ h1 {
   }
 }
 
+
+.site-footer {
+  padding: 2.5rem 0 6.0rem;
+  .block {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.site-footer__top {
+  .region {
+    float: none;
+    width: 100%;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.menu--footer {
+  .navbar-nav {
+    display: inline-block;
+    li {
+      float: left;
+      padding: 0 0.6rem;
+      border-right: #fff 1px solid;
+    }
+    li:last-child {
+      border: none;
+      padding-right: 0;
+    }
+    .nav-link {
+      color: #fff;
+      text-decoration: underline;
+      padding: 0.1rem 0 0.2rem;
+      line-height: 1.1rem;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.footer-copyright-privacy {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+
 @media (min-width: 1600px) {
   .container {
     max-width: 1540px;
@@ -163,6 +215,10 @@ h1 {
   .col-xxl-7 {
     max-width: 58.3333333%;
     flex: 0 0 58.3333333%;
+  }
+  .col-xxl-6 {
+    max-width: 50%;
+    flex: 0 0 50%;
   }
   .col-xxl-5 {
     max-width: 41.66666%;
