@@ -32,7 +32,38 @@ header {
       padding: 0;
     }
   }
+  .dfci-banner-logo {
+    padding-left: 5.0rem;
+  }
+  .search-block-form {
+    .container-inline > .container-inline {
+      display: block;
+    }
+  }
+  .search-form {
+    .form-type-search {
+      width: 70%;
+    }
+    .form-control {
+      border-radius: 0;
+    }
+    input[type="search"] {
+      border-color: $dk-blue;
+      line-height: 1.0;
+    }
+    input[type="submit"] {
+      background-color: $dk-blue;
+      padding-top: 0;
+      padding-bottom: 0;
+      border: none;
+      height: 30px;
+    }
+  }
+  #search-block-form {
+    padding: 0;
+  }
 }
+
 
 .navbar {
   padding-top: 0.3rem;
@@ -128,6 +159,12 @@ header {
 
 .homepage-news-grid {
   margin-top: 2.5rem;
+  h3 a {
+    color: $dk-blue;
+    font-family: $frank;
+    font-weight: $med;
+    font-size: 1.3rem;
+  }
 }
 
 .title-decor {
@@ -234,6 +271,14 @@ h1 {
   }
   .offset-xxl-3 {
     margin-left: 25%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  header {
+    .dfci-banner-logo {
+      padding-left: 3.0rem;
+    }
   }
 }
 
