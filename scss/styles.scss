@@ -1,12 +1,15 @@
 $dk-blue: #13496D;
+$sky-blue: #077ED6;
+$turq: #00BDFF;
 $pale-yellow: #F4CE90;
 $bright_yellow: #E5CF6A;
-$turq: #00BDFF;
 
 $frank: "frank-new";
 $rift: "rift";
 $fsp: "freight-sans-pro";
+$realist: "realist";
 
+$semi-lt: 300;
 $book: 400;
 $med: 500;
 $semi: 600;
@@ -26,14 +29,16 @@ header, .layout-main-wrapper {
 
 header {
   .banner {
-    padding: 1.1rem 0;
-    background: url("../images/yellow_vert_lines.svg") 0 100% repeat-x;
+    padding: 0.7rem 0 0 0;
     .navbar-brand {
       padding: 0;
+      margin-right: 2.9rem;
     }
   }
   .dfci-banner-logo {
-    padding-left: 5.0rem;
+    .field--type-image img {
+      margin-bottom: 0;
+    }
   }
   .search-block-form {
     .container-inline > .container-inline {
@@ -65,26 +70,35 @@ header {
 }
 
 
-.navbar {
-  padding-top: 0.3rem;
+#navbar-main.navbar {
+  border-top: $turq 3px solid;
+  padding-top: 0.2rem;
   padding-bottom: 0;
 }
 
 .menu--main {
   .nav-link {
     color: $dk-blue;
-    font-family: $frank;
+    font-family: $realist;
     font-weight: $book;
     text-transform: uppercase;
-    font-size: 1.1rem;
-    border-bottom: #fff 7px solid;
-    margin: 0 1.05rem;
+    font-size: 0.95rem;
+    border-bottom: #fff 6px solid;
+    margin: 0 0.7rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.2rem;
   }
   .nav-link:hover,
   .nav-link:focus,
   .nav-link.is-active {
-    border-color: $bright-yellow;
+    color: $turq;
+    border-color: $turq;
   }
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 }
 
 .mission-statement {
@@ -103,6 +117,7 @@ header {
       font-size: 1.7rem;
       margin: 0;
       line-height: 2.4rem;
+      border: none;
     }
   }
 }
@@ -159,28 +174,33 @@ header {
 
 .homepage-news-grid {
   margin-top: 2.5rem;
-  h3 a {
-    color: $dk-blue;
+  h3 {
+    line-height: 1.9rem;
+    font-size: 1.4rem;
     font-family: $frank;
-    font-weight: $med;
-    font-size: 1.3rem;
+    font-weight: $book;
+  }
+  h3 a {
+    color: $sky-blue;
   }
 }
 
 .title-decor {
-  background: #fff url('../images/yellow_vert_lines.svg') 2% 100% no-repeat;
-  padding-bottom: 0.1rem;
-  margin-bottom: 1.0rem;
+  margin-bottom: 1.6rem;
   margin-left: -2.0rem;
+  border-bottom: $dk-blue 1px solid;
 }
 
 h1 {
+  border-bottom: $turq 3px solid;
+  font-family: $rift;
   font-weight: $book;
-  color: $dk-blue;
-  border-bottom: $dk-blue 1px solid;
-  padding-left: 2.8rem;
   font-size: 2.8rem;
+  display: inline-block;
+  color: $dk-blue;
+  padding: 0 2.0rem;
   line-height: 3.4rem;
+  margin-bottom: -3px;
 }
 
 .index-col-3 {
@@ -271,6 +291,12 @@ h1 {
   }
   .offset-xxl-3 {
     margin-left: 25%;
+  }
+  .offset-xxl-4 {
+    margin-left: 33.3333333%;
+  }
+  .offset-xxl-5 {
+    margin-left: 41.66666666%;
   }
 }
 
