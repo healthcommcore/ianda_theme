@@ -23,6 +23,10 @@ body {
   line-height: 1.6rem;
 }
 
+strong, b {
+  font-weight: $semi;
+}
+
 header, .layout-main-wrapper {
   background-color: #fff;
 }
@@ -87,6 +91,7 @@ header {
     margin: 0 0.7rem;
     padding-top: 0.1rem;
     padding-bottom: 0.2rem;
+    text-decoration: none;
   }
   .nav-link:hover,
   .nav-link:focus,
@@ -176,12 +181,13 @@ header {
   margin-top: 2.5rem;
   h3 {
     line-height: 1.9rem;
-    font-size: 1.4rem;
     font-family: $frank;
     font-weight: $book;
   }
   h3 a {
     color: $sky-blue;
+    text-decoration: none;
+    font-size: 1.4rem;
   }
 }
 
@@ -191,6 +197,29 @@ header {
   border-bottom: $dk-blue 1px solid;
 }
 
+/** SERVICES **/
+.service-container {
+  margin-bottom: 2.4rem;
+  p.service-description {
+    font-style: italic;
+    margin-bottom: 0.8rem;
+  }
+  p {
+    margin: 0;
+  }
+  .service-label {
+    font-weight: $semi;
+    font-size: 1.33rem;
+  }
+}
+
+.view-services {
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+/** COMMON **/
 h1 {
   border-bottom: $turq 3px solid;
   font-family: $rift;
@@ -203,6 +232,37 @@ h1 {
   margin-bottom: -3px;
 }
 
+h2 {
+  color: $sky-blue;
+  font-family: $frank;
+  font-weight: $book;
+  font-size: 1.5rem;
+}
+
+a {
+  color: $turq;
+  font-weight: $med;
+  text-decoration: underline;
+  font-family: $frank;
+  font-size: 1.16rem;
+  transition: color, 0.5s;
+}
+
+a:hover, a:focus, a:active {
+  color: $dk-blue;
+}
+
+.page-border-and-margin {
+  margin-top: 2.0rem;
+  padding-top: 3.3rem;
+  padding-bottom: 4.0rem;
+}
+
+.block-page-title-block {
+  margin-bottom: 2.6rem;
+}
+
+/** FAST FIND **/
 .index-col-3 {
   column-count: 3;
   -moz-column-count: 3;
@@ -214,6 +274,7 @@ h1 {
 }
 
 
+/** FOOTER **/
 .site-footer {
   padding: 2.5rem 0 6.0rem;
   .block {
@@ -261,6 +322,8 @@ h1 {
   a {
     color: #fff;
     text-decoration: underline;
+    font-size: 0.9rem;
+    font-family: $fsp
   }
 }
 
