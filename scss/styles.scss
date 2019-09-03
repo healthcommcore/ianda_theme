@@ -218,6 +218,67 @@ header {
     margin-bottom: 0;
   }
 }
+/** GROUP PAGE **/
+
+.group-mission,
+.group-services,
+.group-key-contact,
+.group-project-highlight {
+  margin-bottom: 2.1rem;
+  ul li {
+    line-height: 2.2rem;
+  }
+}
+
+.group-mission {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  .mission-label {
+    font-weight: $semi;
+    color: $dk-blue;
+  }
+}
+
+.group-key-contact {
+  h3 {
+    margin-top: 1.8rem;
+  }
+}
+
+.group-project-highlight {
+  .paragraph--type--project-image {
+    padding-left: 1.1rem;
+  }
+  .field--name-field-project-title {
+    font-weight: $semi;
+    font-size: 1.4rem;
+    margin: 1.1rem 0;
+  }
+  .field--name-field-image {
+    border-top: $dk-blue 16px solid;
+  }
+  .field--type-image img {
+    margin-bottom: 0.8em;
+  }
+  .field--name-field-image-caption {
+    line-height: 1.4rem;
+    font-size: 1.1rem;
+    font-style: italic;
+    padding: 0 1.0rem 1.1rem 1.0rem;
+    border-bottom: $turq 3px solid;
+  }
+}
+/** FAST FIND **/
+.index-col-3 {
+  column-count: 3;
+  -moz-column-count: 3;
+}
+
+.view-fast-find {
+  .views-row {
+  }
+}
+
 
 /** COMMON **/
 h1 {
@@ -237,6 +298,14 @@ h2 {
   font-family: $frank;
   font-weight: $book;
   font-size: 1.5rem;
+}
+
+h3 {
+  color: $sky-blue;
+  font-family: $frank;
+  font-weight: $book;
+  font-style: italic;
+  font-size: 1.25rem;
 }
 
 a {
@@ -261,18 +330,6 @@ a:hover, a:focus, a:active {
 .block-page-title-block {
   margin-bottom: 2.6rem;
 }
-
-/** FAST FIND **/
-.index-col-3 {
-  column-count: 3;
-  -moz-column-count: 3;
-}
-
-.view-fast-find {
-  .views-row {
-  }
-}
-
 
 /** FOOTER **/
 .site-footer {
