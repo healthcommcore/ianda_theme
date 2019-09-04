@@ -27,6 +27,7 @@ strong, b {
   font-weight: $semi;
 }
 
+/** BANNER **/
 header, .layout-main-wrapper {
   background-color: #fff;
 }
@@ -73,7 +74,7 @@ header {
   }
 }
 
-
+/** MAIN MENU **/
 #navbar-main.navbar {
   border-top: $turq 3px solid;
   padding-top: 0.2rem;
@@ -106,6 +107,7 @@ header {
   padding-left: 0.8rem;
 }
 
+/** HOMEPAGE **/
 .mission-statement {
   flex: 0 0 100%;
   margin-bottom: 1.6rem;
@@ -188,6 +190,9 @@ header {
     color: $sky-blue;
     text-decoration: none;
     font-size: 1.4rem;
+  }
+  h3 a:hover {
+    color: $dk-blue;
   }
 }
 
