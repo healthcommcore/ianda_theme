@@ -270,13 +270,25 @@ header {
   }
 }
 /** FAST FIND **/
-.index-col-3 {
+.index-col {
   column-count: 3;
   -moz-column-count: 3;
 }
 
-.view-fast-find {
-  .views-row {
+.fast-find-list {
+  h2, .fast-find-terms {
+    padding-left: 0.5rem;
+  }
+  h2 {
+    padding-right: 6.0rem;
+    border-bottom: $dk-blue 1px solid;
+    display: inline-block;
+  }
+  .fast-find-terms {
+    padding-bottom: 1.3rem;
+    .views-row {
+      margin-bottom: 0.9rem;
+    }
   }
 }
 
@@ -425,6 +437,26 @@ a:hover, a:focus, a:active {
     .dfci-banner-logo {
       padding-left: 3.0rem;
     }
+  }
+}
+
+@media (max-width: 1199px) {
+  .index-col {
+    column-count: 2;
+    -moz-column-count: 2;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+  .index-col {
+    column-count: 1;
+    -moz-column-count: 1;
   }
 }
 
