@@ -53,3 +53,37 @@ function ianda_preprocess_block(&$vars) {
   }
 }
 
+/** 
+ * Implements hook_preprocess_container()
+ */
+function ianda_preprocess_container(&$vars) {
+  $path = \Drupal::service('path.current')->getPath();
+  if(is_search_page($path)) {
+    $vars['attributes']['search_page'] = true;
+  }
+}
+
+/** 
+ * Implements hook_preprocess_form_element()
+ */
+function ianda_preprocess_form_element(&$vars) {
+  $path = \Drupal::service('path.current')->getPath();
+  if(is_search_page($path)) {
+    $vars['attributes']['search_page'] = true;
+  }
+}
+
+/** 
+ * Implements hook_preprocess_input()
+ */
+function ianda_preprocess_input(&$vars) {
+  $path = \Drupal::service('path.current')->getPath();
+  if(is_search_page($path)) {
+    $vars['attributes']['search_page'] = true;
+  }
+}
+
+function is_search_page($path) {
+  $path_arr = explode("/", $path);
+  return $path_arr[1] == "search";
+}

@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{# kint(attributes) #}
+
+{% set search = attributes.search_page %}
+{% set submit = attributes.type == "submit" %}
+{% set main_search = attributes.id == "edit-submit" %}
+
+{% set classes = [
+    search and submit and main_search ? "btn-lg",
+    submit ?: "form-control"
+  ]
+%}
+
+<input{{ attributes.addClass(classes) }} />{{ children }}

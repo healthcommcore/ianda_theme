@@ -179,8 +179,17 @@ header {
   }
 }
 
-.homepage-news-grid {
-  margin-top: 2.5rem;
+/** NEWS: ALL DISPLAYS **/
+.news-page {
+  .news-display {
+    margin-bottom: 2.5rem;
+    h3 {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+.news-display {
   h3 {
     line-height: 1.9rem;
     font-family: $frank;
@@ -196,6 +205,20 @@ header {
   }
 }
 
+.views-field-field-date,
+.field--type-datetime {
+  margin-bottom: 0.4rem;
+}
+
+time.datetime {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.homepage-news-grid {
+  margin-top: 2.5rem;
+}
+
 .title-decor {
   margin-bottom: 1.6rem;
   margin-left: -2.0rem;
@@ -208,6 +231,12 @@ header {
   p.service-description {
     font-style: italic;
     margin-bottom: 0.8rem;
+  }
+  .other-information {
+    margin-top: 1.0rem;
+    p {
+      margin-bottom: 1.0rem;
+    }
   }
   p {
     margin: 0;
