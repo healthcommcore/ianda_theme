@@ -88,8 +88,23 @@ function ianda_preprocess_input(&$vars) {
  */
 function ianda_preprocess_search_result(&$vars) {
   /*
+     result
+     attributes
+     url
+     title
+     directory
+     info
+     info_split
   dump(array_keys($vars));
+  dump(get_class_methods($vars['result']['node']));
+  dump($vars['result']['node']->field_service_category[0]);
+  if (is_a($erf, 'FieldItemBase')) {
+    dump($vars['result']['node']->field_service_category[0]->values);
+  }
   */
+  $erf = ($vars['result']['node']->field_service_category[0]);
+  $termid = method_exists($erf, 'getString') ? $erf->getString() : false;
+  dump($termid);
 }
 
 function is_search_page($path) {
