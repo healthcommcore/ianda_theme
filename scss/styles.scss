@@ -254,9 +254,9 @@ time.datetime {
 }
 /** GROUP PAGE **/
 
-.group-mission,
+.group-mission-statement,
 .group-services,
-.group-key-contact,
+.group-key-contact-information,
 .group-project-highlight {
   margin-bottom: 2.1rem;
   ul li {
@@ -264,7 +264,7 @@ time.datetime {
   }
 }
 
-.group-mission {
+.group-mission-statement {
   font-size: 1.5rem;
   line-height: 1.8rem;
   .mission-label {
@@ -273,7 +273,7 @@ time.datetime {
   }
 }
 
-.group-key-contact {
+.group-key-contact-information {
   h3 {
     margin-top: 1.8rem;
     font-style: italic;
