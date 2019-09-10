@@ -85,45 +85,36 @@ function ianda_preprocess_input(&$vars) {
 
 /** 
  * Implements hook_preprocess_search_result()
+ *
+ * We want to override the default url construction
+ * for search results that are services. Instead of
+ * linking to the Service content type, we want to
+ * link to where the service is listed on the corresponding
+ * service category page
  */
 function ianda_preprocess_search_result(&$vars) {
-  $result = $vars['result'];
-  $path = "";
-  $vars['check_type'] = array(
-    'is_group' => false,
-    'is_service' => false
-  );
-  switch( strtolower($result['type']) ) {
-    case "i and a group":
-      $vars['check_type']['is_group'] = true;
-      $path = "/groups/";
-      $path .= make_friendly_url($result['title']);
-      $vars['url_override'] = $path;
-      break;
-    case "service":
-      $vars['check_type']['is_service'] = true;
-      $path = "/services/";
-      $service = '/#';
-      $service .= make_friendly_url($result['title']);
-      $category = get_category($result);
-      $path .= $category . $service;
-      $vars['url_override'] = $path;
-      break;
-    default:
-      return false;
-  }
   /*
      ['result']['title']
      ['result']['type']
-     attributes
-     url
-     title
-     directory
-     info
-     info_split
   */
+  $result = $vars['result'];
+  if ( strtolower($result['type']) !=="service" ) {
+    return false;
+  }
+  $vars['is_service'] = true;
+  $path = "/services/";
+  $service = '/#';
+  $service .= make_friendly_url($result['title']);
+  $category = get_category($result);
+  $path .= $category . $service;
+  $vars['url_override'] = $path;
 }
 
+/** 
+ * Accepts a $result array, extracts the node object, 
+ * finds the taxonomy term's id within the node object's
+ * field_service_category, gets the name from get_category_name()
+ */
 function get_category($result) {
   $cat_name = "";
   $field_service_cat = $result['node']->field_service_category[0];
@@ -132,23 +123,53 @@ function get_category($result) {
   return $cat_name;
 }
 
+/**
+ * Accepts a taxonomy id, returns the corresponding
+ * taxonomy name.
+ */
 function get_category_name($id) {
   $term = \Drupal\taxonomy\Entity\Term::load($id);
   $name = $term->getName();
   return make_friendly_url($name);
 }
 
+/**
+ * Accepts a string with spaces and symbols,
+ * returns a url-friendly string with dashes
+ * in place of spaces.
+ */
 function make_friendly_url($str) {
-  $cleaned = remove_unwanted_chars($str);
-  $friendly = implode('-', explode(' ', $cleaned));
+  $cleaned_str = remove_unwanted_chars($str);
+  $cleaned_arr = explode(' ', $cleaned_str);
+  $cleaned_arr = array_filter($cleaned_arr);
+  $friendly = implode('-', $cleaned_arr);
   return $friendly;
 }
 
+/**
+ * Accepts a string, filters out the following
+ * symbols: & : ( )
+ */
 function remove_unwanted_chars($str) {
   $lower = strtolower($str);
-  $cleaned = trim($lower, ':&()');
+  $unwanted = get_unwanted_symbols();
+  $cleaned = str_replace($unwanted, '', $lower);
   return $cleaned;
 }
+
+function get_unwanted_symbols() {
+  return [
+    '!', '@', '#', '$', '%', '^',
+    '&', '*', '(', ')', ':', ';', ','
+  ];
+}
+
+
+/**
+ * Accepts a string, returns boolean based
+ * on whether or not the string "search"
+ * is found.
+ */
 function is_search_page($path) {
   $path_arr = explode("/", $path);
   return $path_arr[1] == "search";

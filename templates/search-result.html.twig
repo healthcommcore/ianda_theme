@@ -59,7 +59,7 @@
  * @see template_preprocess_search_result()
  */
 #}
-{% set path = (check_type.is_service or check_type.is_group) ? url_override : url %}
+{% set path = is_service ? url_override : url %}
 {{ title_prefix }}
 <h3{{ title_attributes }}>
   <a href="{{ path }}">{{ title }}</a>
