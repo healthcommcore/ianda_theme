@@ -139,17 +139,15 @@ function get_category_name($id) {
 }
 
 function make_friendly_url($str) {
-  $values = explode(' ', $str);
-  array_walk($values, 'clean_chars');
-  $friendly = implode('-', $values);
+  $cleaned = remove_unwanted_chars($str);
+  $friendly = implode('-', explode(' ', $cleaned));
   return $friendly;
 }
 
-function clean_chars(&$item) {
-  $lower = strtolower($item);
+function remove_unwanted_chars($str) {
+  $lower = strtolower($str);
   $cleaned = trim($lower, ':&()');
-  $item = $cleaned;
-  return $item;
+  return $cleaned;
 }
 function is_search_page($path) {
   $path_arr = explode("/", $path);
