@@ -87,26 +87,70 @@ function ianda_preprocess_input(&$vars) {
  * Implements hook_preprocess_search_result()
  */
 function ianda_preprocess_search_result(&$vars) {
+  $result = $vars['result'];
+  $path = "";
+  $vars['check_type'] = array(
+    'is_group' => false,
+    'is_service' => false
+  );
+  switch( strtolower($result['type']) ) {
+    case "i and a group":
+      $vars['check_type']['is_group'] = true;
+      $path = "/groups/";
+      $path .= make_friendly_url($result['title']);
+      $vars['url_override'] = $path;
+      break;
+    case "service":
+      $vars['check_type']['is_service'] = true;
+      $path = "/services/";
+      $service = '/#';
+      $service .= make_friendly_url($result['title']);
+      $category = get_category($result);
+      $path .= $category . $service;
+      $vars['url_override'] = $path;
+      break;
+    default:
+      return false;
+  }
   /*
-     result
+     ['result']['title']
+     ['result']['type']
      attributes
      url
      title
      directory
      info
      info_split
-  dump(array_keys($vars));
-  dump(get_class_methods($vars['result']['node']));
-  dump($vars['result']['node']->field_service_category[0]);
-  if (is_a($erf, 'FieldItemBase')) {
-    dump($vars['result']['node']->field_service_category[0]->values);
-  }
   */
-  $erf = ($vars['result']['node']->field_service_category[0]);
-  $termid = method_exists($erf, 'getString') ? $erf->getString() : false;
-  dump($termid);
 }
 
+function get_category($result) {
+  $cat_name = "";
+  $field_service_cat = $result['node']->field_service_category[0];
+  $id = method_exists($field_service_cat, 'getString') ? $field_service_cat->getString() : false;
+  $cat_name = $id ? get_category_name($id) : "";
+  return $cat_name;
+}
+
+function get_category_name($id) {
+  $term = \Drupal\taxonomy\Entity\Term::load($id);
+  $name = $term->getName();
+  return make_friendly_url($name);
+}
+
+function make_friendly_url($str) {
+  $values = explode(' ', $str);
+  array_walk($values, 'clean_chars');
+  $friendly = implode('-', $values);
+  return $friendly;
+}
+
+function clean_chars(&$item) {
+  $lower = strtolower($item);
+  $cleaned = trim($lower, ':&()');
+  $item = $cleaned;
+  return $item;
+}
 function is_search_page($path) {
   $path_arr = explode("/", $path);
   return $path_arr[1] == "search";
