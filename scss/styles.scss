@@ -468,8 +468,21 @@ a:hover, a:focus, a:active {
 
 @media (min-width: 1200px) and (max-width: 1599px) {
   header {
+    .banner {
+      .navbar-brand {
+        margin-right: 0;
+      }
+    }
     .dfci-banner-logo {
-      padding-left: 3.0rem;
+      padding-left: 15px;
+    }
+  }
+  .mission-statement {
+    .statement-container {
+      h1 {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+      }
     }
   }
 }
