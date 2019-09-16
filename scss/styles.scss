@@ -466,13 +466,18 @@ a:hover, a:focus, a:active {
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1599px) {
+@media (max-width: 1599px) {
   header {
     .banner {
       .navbar-brand {
         margin-right: 0;
       }
     }
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  header {
     .dfci-banner-logo {
       padding-left: 15px;
     }
@@ -491,6 +496,25 @@ a:hover, a:focus, a:active {
   .index-col {
     column-count: 2;
     -moz-column-count: 2;
+  }
+  header {
+    .search-form {
+      .form-type-search {
+        width: 60%;
+      }
+    }
+  }
+  .mission-statement {
+    margin-left: 15px;
+    margin-right: 15px;
+    .statement-container {
+      width: 100%;
+    }
+  }
+  .site-footer {
+    .ianda-footer-logo {
+      margin-left: 15px;
+    }
   }
 }
 

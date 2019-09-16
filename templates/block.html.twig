@@ -38,7 +38,7 @@
   ]
 %}
 
-{% if configuration.homepage_tile %}
+{% if configuration.homepage_tile and is_front %}
   <div class="col-md-4">
     <div class="homepage-tile">
 {% endif %}
@@ -55,7 +55,7 @@
   {% endblock %}
 </div>
 
-{% if configuration.homepage_tile %}
+{% if configuration.homepage_tile and is_front %}
     </div>
   </div>
 {% endif %}
