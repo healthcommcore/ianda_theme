@@ -18,16 +18,18 @@
     'col-xxl-4',
     'col-xl-6',
     'col-lg-7',
+    'col-md-5',
     'offset-xxl-5',
     'offset-xl-3',
     'offset-lg-1',
+    'offset-md-1',
     'mt-1',
     'region-' ~ region|clean_class,
   ]
 %}
 {% if content %}
     <section{{ attributes.addClass(classes).removeClass('row') }}>
-      <div class="row">
+      <div class="row d-md-flex flex-row-reverse">
         {{ content }}
       </div>
     </section>
