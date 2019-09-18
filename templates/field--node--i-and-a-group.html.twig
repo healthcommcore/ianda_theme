@@ -70,24 +70,32 @@
 {% else %}
 {% set group_class = label|split(' ')|join('-')|lower %}
   <div class={{ 'group-' ~ group_class }}>
+{#
     {% if label != "Mission statement" %}
       <h2>{{ label }}</h2>
     {% endif %}
+#}
+    <h2>{{ label }}</h2>
     {% if multiple %}
       <div class='field__items'>
     {% endif %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+{#
     {% set is_mission = label == "Mission statement" %}
     {% set mission_text = is_mission ? label|split(' ')|first : '' %}
     {% for item in items %}
       {% if is_mission %}
         <p>
           <span class="mission-label">{{ mission_text ~ ': ' }}</span>
-          {{ item.content|e|striptags }}
+          {{ item.content }}
         </p>
       {% else %}
         {{ item.content }}
       {% endif %}
     {% endfor %}
+#}
     {% if multiple %}
       </div>
     {% endif %}

@@ -90,8 +90,7 @@ header {
   border: $turq 2px solid;
   margin-top: 0;
   a {
-    font-family: $frank;
-    font-weight: $book;
+    font-family: $realist;
     color: $dk-blue;
     text-decoration: none;
   }
@@ -578,6 +577,7 @@ a:hover, a:focus, a:active {
       display: none;
     }
     .hover-to-show.show ul.dropdown-menu,
+    .active.hover-to-show ul.dropdown-menu,
     .hover-to-show.show:hover ul.dropdown-menu {
       display: block;
     }
