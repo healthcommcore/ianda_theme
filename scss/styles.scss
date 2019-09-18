@@ -560,6 +560,32 @@ a:hover, a:focus, a:active {
     height: 0.2em;
     background-color: $turq;
   }
+
+  .menu--main {
+    .nav-item {
+      padding: 0.2em 0;
+    }
+    .nav-link,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active,
+    .nav-link.is-active {
+      border: none;
+    }
+  }
+  #navbar-main.navbar {
+    .hover-to-show:hover ul.dropdown-menu {
+      display: none;
+    }
+    .hover-to-show.show ul.dropdown-menu,
+    .hover-to-show.show:hover ul.dropdown-menu {
+      display: block;
+    }
+  }
+  button.btn.dropdown-toggle {
+    background: none;
+    padding: 0.15rem 0.5rem 0.15rem .75rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
