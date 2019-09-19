@@ -632,6 +632,19 @@ a:hover, a:focus, a:active {
       }
     }
   }
+  .site-footer {
+    .ianda-footer-logo,
+    .dfci-footer-logo {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .ianda-footer-logo {
+      margin-bottom: 25px;
+      img {
+        margin-left: 25px;
+      }
+    }
+  }
 }
 
 @media (max-width: 575px) {
