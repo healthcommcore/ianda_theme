@@ -376,6 +376,10 @@ h2 {
   font-size: 1.5rem;
 }
 
+h2 + h3 {
+  margin-top: 1.5rem;
+}
+
 h3 {
   color: $sky-blue;
   font-family: $frank;
@@ -404,6 +408,16 @@ a:hover, a:focus, a:active {
 
 .block-page-title-block {
   margin-bottom: 2.6rem;
+}
+
+.ianda-video-embed.embed-responsive {
+  width: 30%;
+}
+  
+#main {
+  ul, ol {
+    margin-top: -1.0rem;
+  }
 }
 
 /** FOOTER **/
@@ -644,6 +658,9 @@ a:hover, a:focus, a:active {
         margin-left: 25px;
       }
     }
+  }
+  .ianda-video-embed.embed-responsive {
+    width: 100%;
   }
 }
 

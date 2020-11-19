@@ -1,6 +1,6 @@
 {
   "name": "ianda_theme",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Sass architecture for I and A theme development",
   "main": "index.js",
   "author": "Dave Rothfarb",
