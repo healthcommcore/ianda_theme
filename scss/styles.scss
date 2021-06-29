@@ -429,6 +429,10 @@ a:hover, a:focus, a:active {
   ul, ol {
     margin-top: -1.0rem;
   }
+  ul ul, ol ol,
+  ul ol, ol ul {
+    margin-top: 0;
+  }
 }
 
 /** FOOTER **/
