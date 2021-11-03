@@ -3,6 +3,7 @@ type: theme
 description: 'A Bootstrap 4 subtheme for the Informatics and Analytics website'
 version: 1.0
 core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: bootstrap_barrio
 
 libraries:
